@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd
+
+           http://www.springframework.org/schema/context
+           https://www.springframework.org/schema/context/spring-context.xsd">
+           
+           
+          
+           <bean id="StudentClass" class="Core.BasicProgram.Student">
+           <!-- <property name="name" value="Prathmesh"></property>
+           <property name="id" value="101"></property>
+           <property name="address" value="Pune"></property>
+           <property name="University" ref="UniversityClass"></property>-->
+           <constructor-arg value="Prathmesh"></constructor-arg>
+           <constructor-arg value="101"></constructor-arg>
+           <constructor-arg value="pune"></constructor-arg>
+           </bean>
+           
+            <bean id="UniversityClass" class="Core.BasicProgram.University">
+           <!--  <property name="UniversityName" value="SPPU"></property>
+            <property name="UniversityId"  value="1010"></property>
+            <property name="UniversityAddress" value="Mumbai"></property>-->
+            <constructor-arg value="SPPU"></constructor-arg>
+            <constructor-arg value="1020"></constructor-arg>
+            <constructor-arg value="Mumbai"></constructor-arg>
+            <constructor-arg ref="StudentClass"></constructor-arg>            
+            </bean>
+           
+           
+
+            </beans>

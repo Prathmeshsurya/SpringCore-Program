@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+	<bean id="qualification1" class="com.AutoWire.qualification">
+		<property name="stream" value="Science"></property>
+		<property name="subject">
+			<list>
+				<value>Math</value>
+				<value>Physics</value>
+				<value>Chemistry</value>
+				<value>English</value>
+			</list>
+		</property>
+		<property name="intermediate" value="true"></property>
+	</bean>
+	<bean id="resume" class="com.AutoWire.Resume">
+		<property name="designation" value="B.Tech"></property>
+		<property name="passoutYear">
+			<map>
+				<entry key="b.tech" value="2026"></entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="qualification" class="com.AutoWire.qualification" autowire-candidate="false">
+		<property name="stream" value="ElectricalEngineering"></property>
+		<property name="subject">
+			<list>
+				<value>FieldEngineer</value>
+				<value>BasicFlow</value>
+				<value>StaticElectricity</value>
+				<value>Math</value>
+				<value>CivilWork</value>
+			</list>
+		</property>
+		<property name="intermediate" value="true"></property>
+	</bean>
+
+	<bean id="student" class="com.AutoWire.Student"
+		autowire="constructor">
+		<property name="name" value="abc"></property>
+		<property name="id" value="101"></property>
+		<property name="address" value="hyd"></property>
+		<property name="marks" value="90.5"></property>
+		<!-- <property name="qualification" ref="qualification"/> -->
+	</bean>
+</beans>

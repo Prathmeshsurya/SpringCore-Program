@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           https://www.springframework.org/schema/context/spring-context.xsd">
+          
+          <bean id="Motor" class="com.vehicle.Motor">
+          <!--  <property name="motorId" value="4545"></property>
+          <property name="motorType" value="Gt650"></property>-->
+          
+          <constructor-arg value="3555"></constructor-arg>
+          <constructor-arg value="Hunter350"></constructor-arg>
+          </bean>
+          
+          
+          <bean id="toycar" class="com.vehicle.Toycar">
+          <!--<property name="toyCarId" value="3555"></property>
+          <property name="toyCarBrand" value="BMW"></property>
+          <property name="Motor" ref="Motor"></property>-->
+          
+          <constructor-arg value="0808"></constructor-arg>
+          <constructor-arg value="Audi"></constructor-arg>
+          <constructor-arg ref="Motor"></constructor-arg>
+          
+          </bean>
+           </beans>
